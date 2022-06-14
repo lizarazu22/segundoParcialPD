@@ -7,21 +7,24 @@ public class OrderCategoria implements IOrderDB {
 
     @Override
     public void orderUsers(List<User> users) {
-        System.out.println("");
-        List<User> ordered = new LinkedList<User>();
-        int last = Integer.MAX_VALUE;
-        while (ordered.size() != users.size()) {
-            last = Integer.MAX_VALUE;
+        System.out.println();
+        List<User> orderCategoria = new LinkedList<User>();
+        for (User user : orderCategoria) {
+            orderCategoria.add(user);
+        }
+        char last = 'z';
+        while (orderCategoria.size() != users.size()) {
+            last = 'z';
             User lastUser = null;
-            for (User user : users) {
-                if (user.getCategoria() < last && !ordered.contains(user)) {
-                    last = user.getCategoria();
-                    lastUser = user;
+            for (User usuario : users) {
+                if (usuario.getCategoria().charAt(0) < last && !orderCategoria.contains(usuario)) {
+                    last = usuario.getCategoria().charAt(0);
+                    lastUser = usuario;
                 }
             }
-            ordered.add(lastUser);
+            orderCategoria.add(lastUser);
         }
-        for (User usuario : ordered) {
+        for (User usuario : orderCategoria) {
             usuario.mostrarInfo();
             System.out.println();
         }

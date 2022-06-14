@@ -8,23 +8,23 @@ public class OrderTitulo implements IOrderDB {
     @Override
     public void orderUsers(List<User> users) {
         System.out.println();
-        List<User> orderName = new LinkedList<User>();
-        for (User user : orderName) {
-            orderName.add(user);
+        List<User> orderTitulo = new LinkedList<User>();
+        for (User user :orderTitulo) {
+            orderTitulo.add(user);
         }
         char last = 'z';
-        while (orderName.size() != users.size()) {
+        while (orderTitulo.size() != users.size()) {
             last = 'z';
             User lastUser = null;
             for (User usuario : users) {
-                if (usuario.getTitulo().charAt(0) < last && !orderName.contains(usuario)) {
+                if (usuario.getTitulo().charAt(0) < last && !orderTitulo.contains(usuario)) {
                     last = usuario.getTitulo().charAt(0);
                     lastUser = usuario;
                 }
             }
-            orderName.add(lastUser);
+            orderTitulo.add(lastUser);
         }
-        for (User usuario : orderName) {
+        for (User usuario : orderTitulo) {
             usuario.mostrarInfo();
             System.out.println();
         }
